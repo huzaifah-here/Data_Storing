@@ -5,3 +5,4 @@ This is second line
 "git init
 git add Readme.md"
 `git commit -m "README.md`
+`git push origin`
