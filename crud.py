@@ -6,7 +6,7 @@ import mysql.connector
     SHOW DATABASES;
     USE database_name;
 """
-
+#git
 # Connect to the database
 conn = mysql.connector.connect(
   host="localhost",
