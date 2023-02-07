@@ -50,7 +50,7 @@ def delete(conn, id):
 
 # Use the functions
 #create(conn, "John Doe", "johndoe@example.com")
-#read(conn)
+read(conn)
 #update(conn, "Jane Doe", "janedoe@example.com", 1)
 #read(conn)
 #delete(conn, 1)
