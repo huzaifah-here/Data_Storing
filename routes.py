@@ -36,7 +36,12 @@ def submit_data():
 def read():
     return render_template('read.html', the_title='READ')
 @app.route('/read_data', methods=['GET', 'POST'])
-# def read_data():
+def read_data():
+    name = request.form['user-name']
+    data=db.read(conn,name)
+    print(data)
+    return render_template("read.html", data=data)
+
 
 
 

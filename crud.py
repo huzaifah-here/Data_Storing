@@ -24,14 +24,24 @@ def create(conn, name, email):
     print("Record created successfully")
 
 # Read
-def read(conn):
+#flask-sqlalchemy
+def read(conn,name):
     cursor = conn.cursor()
     sql = "SELECT * FROM users"
+    #sql = "SELECT * FROM users WHERE id = 2"
     cursor.execute(sql)
     result = cursor.fetchall()
+    
+    # for row in result:
+    #     print(row)
+    res=()
     for row in result:
-        print(row)
-
+        if row[1] == name:
+            for e in row:
+                res=res+(e,)   
+    print(res)
+    return res 
+                
 # Update
 def update(conn, name, email, id):
     cursor = conn.cursor()
@@ -51,7 +61,7 @@ def delete(conn, id):
 
 # Use the functions
 #create(conn, "John Doe", "johndoe@example.com")
-read(conn)
+#read(conn)
 #update(conn, "Jane Doe", "janedoe@example.com", 1)
 #read(conn)
 #delete(conn, 1)
