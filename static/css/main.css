@@ -16,6 +16,65 @@
     color:red;
 
 }
+.flex-con {
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+}
+.btn-submit:hover {
+    background: #F6F9FE;
+    color: #174ea6;
+  }
+.btn-submit {
+    background-color: #295CE7; /* Green */
+    align-items: center;
+  appearance: none;
+ 
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: whitesmoke;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.flex-con >.button {
+    /* display:flex; */
+    background-color: #295CE7; /* Green */
+    border: black;
+    
+    color: white;
+    padding: 20px 60px;
+    
+    text-align: right;
+    align-items: right;
+    text-decoration: none;
+    
+    font-size: 16px;
+  }
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 100%;
@@ -25,10 +84,10 @@ body {
 }
 
 #container {
-    margin: 2em auto;
-    width: 740px;
+    margin: auto;
+    width: 1000px;
     padding: 2em 4em;
-    background: #f1f7dc;
+    background: wheat;
 }
 
 h1, h2 {

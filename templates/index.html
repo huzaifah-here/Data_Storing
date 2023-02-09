@@ -8,11 +8,16 @@
 <!-- note how items from the "static" folder are linked -->
 <img alt="Photo: Bengal Tiger" src="https://assets.website-files.com/5ff66329429d880392f6cba2/61c323afb777801522775611_CRUD%20%20Preview.png">
 <p class="credit">
-ADD something  
+  <a href="https://assets.website-files.com/5ff66329429d880392f6cba2/61c323afb777801522775611_CRUD%20%20Preview.png" target="_blank">Image</a>
 </p>
 
-<p>This is the index page for my example Flask app.</p>
-
+<p>Select your operation</p>
+<div class="flex-con">
+  <a href="{{ url_for('index') }}" class="button">Create</a>
+  <a href="{{ url_for('read') }}" class="button">Read</a>
+  <a href="{{ url_for('index') }}" class="button">Update</a>
+  <a href="{{ url_for('index') }}" class="button">Delete</a>
+</div>
 <ul>
   <!-- note how items from routes in the the Python script are linked -->
   <li><a href="{{ url_for('myth') }}">In myth and legend</a></li>
@@ -46,7 +51,9 @@ ADD something
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn-submit">Submit</button>
+
+  
 </form>
 
 

@@ -31,6 +31,15 @@ def submit_data():
     print(name,email)
     return redirect(url_for('index'))
     
+
+@app.route('/read.html')
+def read():
+    return render_template('read.html', the_title='READ')
+@app.route('/read_data', methods=['GET', 'POST'])
+# def read_data():
+
+
+
     
 @app.route('/symbol.html')
 def symbol():
