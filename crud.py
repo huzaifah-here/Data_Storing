@@ -49,8 +49,7 @@ def update(conn, name, email, id):
     cursor.execute(sql, (name, email, id))
     conn.commit()
     print("Record updated successfully")
-def print_():
-    print("nothig here")
+
 # Delete
 def delete(conn, id):
     cursor = conn.cursor()
