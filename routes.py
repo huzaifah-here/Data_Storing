@@ -32,7 +32,7 @@ def submit_data():
     return redirect(url_for('index'))
     
 
-@app.route('/read.html')
+@app.route('/read')
 def read():
     tuple=()
     return render_template('read.html', the_title='READ', tuple=tuple)
@@ -42,7 +42,38 @@ def read_data():
     data=db.read(conn,name)
     print(data)
     
-    return render_template("read.html", tuple=data)
+    return render_template("read.html", tuple=data,name=name)
+
+
+@app.route('/update', methods=['GET', 'POST'])
+def update():
+    ids=db.total_ids(conn)
+    print("list")
+    print(ids)
+    print("list")
+    return render_template('update.html', ids=ids,the_title='UPDATE')
+
+@app.route('/update_data', methods=['GET', 'POST'])
+def update_data():
+    name = request.form['user-name']
+    email = request.form['user-email']
+    ids = request.form['user-id']
+    print(ids)
+    if request.method == 'POST' and name=="":
+        flash('An error occurred', 'error')
+        #print(name,email)
+        # process the data and save it to the database or perform some other action
+        return redirect(url_for('index'))
+    
+    flash('Record saved successfully','success')
+    db.update(conn, name, email, ids)
+    print(name,email)
+    return redirect(url_for('update'))
+
+
+    
+ 
+    return render_template("update.html")
 
 
 

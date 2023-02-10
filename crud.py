@@ -31,6 +31,10 @@ def read(conn,name):
     #sql = "SELECT * FROM users WHERE id = 2"
     cursor.execute(sql)
     result = cursor.fetchall()
+    if name=='*':
+        for row in result:
+            print(row)
+        return result
     
     # for row in result:
     #     print(row)
@@ -44,6 +48,8 @@ def read(conn,name):
                 
 # Update
 def update(conn, name, email, id):
+    print(id)
+    print("CALL")
     cursor = conn.cursor()
     sql = "UPDATE users SET name=%s, email=%s WHERE id=%s"
     cursor.execute(sql, (name, email, id))
@@ -58,9 +64,20 @@ def delete(conn, id):
     conn.commit()
     print("Record deleted successfully")
 
+#Total ids
+
+def total_ids(conn):
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(id) FROM users")
+    total_ids = cursor.fetchone()[0]
+
+    print(total_ids)
+    return total_ids
+
 # Use the functions
 #create(conn, "John Doe", "johndoe@example.com")
-#read(conn)
+read(conn,'*')
 #update(conn, "Jane Doe", "janedoe@example.com", 1)
 #read(conn)
 #delete(conn, 1)

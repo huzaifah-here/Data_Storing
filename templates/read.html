@@ -4,14 +4,18 @@
 <h1>{{ the_title }}</h1>
 
 <p style="font-size:50px;">Enter name of created data!</p>
+
 <form action="{{ url_for('read_data') }}" method="post">
     <div class="form-group">
       <label for="user-name">Name</label>
+      
       <input type="text" class="form-control" name='user-name' placeholder="Name">
+      <p style="font-size:14px;">(Type * if you want all records) </p>
     </div>
     
   
   <button onclick="loadData()" type="submit" class="btn-submit">Submit</button>
+  
   
     
   </form>
@@ -30,17 +34,29 @@ function loadData() {
   </script>
 
 <div id="data-area">
+  {% if name=='*' %}
+    {% for i in tuple %}
+      <li>{{ i }}</li>
+    {% endfor %}
+  {% else %}
+    <p>ID: {{ tuple[0] }}</p>
+    <p>Name: {{ tuple[1] }}</p>
+    <p>Email: {{ tuple[2] }}</p>
+  {% endif %}
 
         
-  <p>ID: {{ tuple[0] }}</p>
-  <p>Name: {{ tuple[1] }}</p>
-  <p>Email: {{ tuple[2] }}</p>
+  
 
-  <button type="update" class="btn-submit">Update</button>
+  
 
 </div>
 
+<form action="/update" method="post">
+  <button type="update" class="btn-submit">Update</button>
 
+</form>
+
+  
 
 
 
