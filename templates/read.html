@@ -3,7 +3,7 @@
 
 <h1>{{ the_title }}</h1>
 
-
+<p style="font-size:50px;">Enter name of created data!</p>
 <form action="{{ url_for('read_data') }}" method="post">
     <div class="form-group">
       <label for="user-name">Name</label>
@@ -30,10 +30,11 @@ function loadData() {
   </script>
 
 <div id="data-area">
+
         
-    {% for item in data %}
-        <p>{{ item[0] }}: {{ item[1] }}</p>
-    {% endfor %}
+  <p>ID: {{ tuple[0] }}</p>
+  <p>Name: {{ tuple[1] }}</p>
+  <p>Email: {{ tuple[2] }}</p>
 
 </div>
 

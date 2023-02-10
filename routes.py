@@ -34,17 +34,19 @@ def submit_data():
 
 @app.route('/read.html')
 def read():
-    return render_template('read.html', the_title='READ')
+    tuple=()
+    return render_template('read.html', the_title='READ', tuple=tuple)
 @app.route('/read_data', methods=['GET', 'POST'])
 def read_data():
     name = request.form['user-name']
     data=db.read(conn,name)
     print(data)
-    return render_template("read.html", data=data)
+    
+    return render_template("read.html", tuple=data)
 
 
 
-
+#
     
 @app.route('/symbol.html')
 def symbol():
