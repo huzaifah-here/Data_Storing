@@ -1,6 +1,4 @@
 import mysql.connector
-#git branch -m <newname>
-#set path=%PATH%;D:\xampp\mysql\bin;
 """mysql -u username -p
     CREATE DATABASE database_name;
     SHOW DATABASES;
