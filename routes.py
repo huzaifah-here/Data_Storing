@@ -68,14 +68,20 @@ def update_data():
     flash('Record saved successfully','success')
     db.update(conn, name, email, ids)
     print(name,email)
-    return redirect(url_for('update'))
+    return redirect(url_for('update')) 
 
 
-    
- 
-    return render_template("update.html")
-
-
+@app.route('/delete', methods=['GET','POST'])
+def delete():
+    # ids = request.form['user-id']
+    return render_template('delete.html', the_title='DELETE')
+@app.route('/delete_data', methods=['GET','POST'])
+def delete_data():
+    print("hello")
+    ids = request.form['user-id']
+    print(ids)
+    db.delete(conn,ids)
+    return redirect(url_for('read')) 
 
 #
     
